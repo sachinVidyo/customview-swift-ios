@@ -1,0 +1,448 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D9725AFB1F313AF60026883E /* callEnd.png in Resources */ = {isa = PBXBuildFile; fileRef = D9725AEF1F313AF60026883E /* callEnd.png */; };
+		D9725AFC1F313AF60026883E /* callStart.png in Resources */ = {isa = PBXBuildFile; fileRef = D9725AF01F313AF60026883E /* callStart.png */; };
+		D9725AFD1F313AF60026883E /* cameraOff.png in Resources */ = {isa = PBXBuildFile; fileRef = D9725AF11F313AF60026883E /* cameraOff.png */; };
+		D9725AFE1F313AF60026883E /* cameraOn.png in Resources */ = {isa = PBXBuildFile; fileRef = D9725AF21F313AF60026883E /* cameraOn.png */; };
+		D9725AFF1F313AF60026883E /* cameraOnWhite.png in Resources */ = {isa = PBXBuildFile; fileRef = D9725AF31F313AF60026883E /* cameraOnWhite.png */; };
+		D9725B001F313AF60026883E /* cameraSwitch.png in Resources */ = {isa = PBXBuildFile; fileRef = D9725AF41F313AF60026883E /* cameraSwitch.png */; };
+		D9725B011F313AF60026883E /* microphoneOff.png in Resources */ = {isa = PBXBuildFile; fileRef = D9725AF51F313AF60026883E /* microphoneOff.png */; };
+		D9725B021F313AF60026883E /* microphoneOn.png in Resources */ = {isa = PBXBuildFile; fileRef = D9725AF61F313AF60026883E /* microphoneOn.png */; };
+		D9725B031F313AF60026883E /* microphoneOnWhite.png in Resources */ = {isa = PBXBuildFile; fileRef = D9725AF71F313AF60026883E /* microphoneOnWhite.png */; };
+		D9725B041F313AF60026883E /* speakerOff.png in Resources */ = {isa = PBXBuildFile; fileRef = D9725AF81F313AF60026883E /* speakerOff.png */; };
+		D9725B051F313AF60026883E /* speakerOn.png in Resources */ = {isa = PBXBuildFile; fileRef = D9725AF91F313AF60026883E /* speakerOn.png */; };
+		D9725B061F313AF60026883E /* Vidyo.io-Vertical-Dark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D9725AFA1F313AF60026883E /* Vidyo.io-Vertical-Dark@2x.png */; };
+		D9725B081F313ED20026883E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9725B071F313ED20026883E /* HomeViewController.swift */; };
+		D9725B0A1F313F030026883E /* CustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9725B091F313F030026883E /* CustomViewController.swift */; };
+		D984FB061F33F6F700317B33 /* RemoteViewsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D984FB051F33F6F700317B33 /* RemoteViewsHelper.swift */; };
+		D984FB0A1F3A144100317B33 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = D984FB091F3A144100317B33 /* README.md */; };
+		D9ED559C1F265FE4003D27CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9ED559B1F265FE4003D27CF /* AppDelegate.swift */; };
+		D9ED559E1F265FE4003D27CF /* CompositedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9ED559D1F265FE4003D27CF /* CompositedViewController.swift */; };
+		D9ED55A11F265FE4003D27CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9ED559F1F265FE4003D27CF /* Main.storyboard */; };
+		D9ED55A31F265FE4003D27CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9ED55A21F265FE4003D27CF /* Assets.xcassets */; };
+		D9ED55A61F265FE4003D27CF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9ED55A41F265FE4003D27CF /* LaunchScreen.storyboard */; };
+		D9ED55AE1F26609D003D27CF /* VidyoClientIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9ED55AD1F26609D003D27CF /* VidyoClientIOS.framework */; };
+		D9ED55AF1F26609D003D27CF /* VidyoClientIOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D9ED55AD1F26609D003D27CF /* VidyoClientIOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D9ED55B41F26664E003D27CF /* VidyoClientConnector+Bridge.m in Sources */ = {isa = PBXBuildFile; fileRef = D9ED55B31F26664E003D27CF /* VidyoClientConnector+Bridge.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D9ED55B01F26609D003D27CF /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D9ED55AF1F26609D003D27CF /* VidyoClientIOS.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		D9725AED1F312B930026883E /* CustomLayoutSample.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = CustomLayoutSample.entitlements; sourceTree = "<group>"; };
+		D9725AEF1F313AF60026883E /* callEnd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = callEnd.png; path = CustomLayoutSample/Icons/callEnd.png; sourceTree = "<group>"; };
+		D9725AF01F313AF60026883E /* callStart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = callStart.png; path = CustomLayoutSample/Icons/callStart.png; sourceTree = "<group>"; };
+		D9725AF11F313AF60026883E /* cameraOff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cameraOff.png; path = CustomLayoutSample/Icons/cameraOff.png; sourceTree = "<group>"; };
+		D9725AF21F313AF60026883E /* cameraOn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cameraOn.png; path = CustomLayoutSample/Icons/cameraOn.png; sourceTree = "<group>"; };
+		D9725AF31F313AF60026883E /* cameraOnWhite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cameraOnWhite.png; path = CustomLayoutSample/Icons/cameraOnWhite.png; sourceTree = "<group>"; };
+		D9725AF41F313AF60026883E /* cameraSwitch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cameraSwitch.png; path = CustomLayoutSample/Icons/cameraSwitch.png; sourceTree = "<group>"; };
+		D9725AF51F313AF60026883E /* microphoneOff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = microphoneOff.png; path = CustomLayoutSample/Icons/microphoneOff.png; sourceTree = "<group>"; };
+		D9725AF61F313AF60026883E /* microphoneOn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = microphoneOn.png; path = CustomLayoutSample/Icons/microphoneOn.png; sourceTree = "<group>"; };
+		D9725AF71F313AF60026883E /* microphoneOnWhite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = microphoneOnWhite.png; path = CustomLayoutSample/Icons/microphoneOnWhite.png; sourceTree = "<group>"; };
+		D9725AF81F313AF60026883E /* speakerOff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = speakerOff.png; path = CustomLayoutSample/Icons/speakerOff.png; sourceTree = "<group>"; };
+		D9725AF91F313AF60026883E /* speakerOn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = speakerOn.png; path = CustomLayoutSample/Icons/speakerOn.png; sourceTree = "<group>"; };
+		D9725AFA1F313AF60026883E /* Vidyo.io-Vertical-Dark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Vidyo.io-Vertical-Dark@2x.png"; path = "CustomLayoutSample/Icons/Vidyo.io-Vertical-Dark@2x.png"; sourceTree = "<group>"; };
+		D9725B071F313ED20026883E /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		D9725B091F313F030026883E /* CustomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomViewController.swift; sourceTree = "<group>"; };
+		D984FB051F33F6F700317B33 /* RemoteViewsHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteViewsHelper.swift; sourceTree = "<group>"; };
+		D984FB091F3A144100317B33 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		D9ED55981F265FE4003D27CF /* CustomLayoutSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CustomLayoutSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D9ED559B1F265FE4003D27CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D9ED559D1F265FE4003D27CF /* CompositedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositedViewController.swift; sourceTree = "<group>"; };
+		D9ED55A01F265FE4003D27CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D9ED55A21F265FE4003D27CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D9ED55A51F265FE4003D27CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D9ED55A71F265FE4003D27CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D9ED55AD1F26609D003D27CF /* VidyoClientIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VidyoClientIOS.framework; path = CustomLayoutSample/VidyoClientIOS.framework; sourceTree = "<group>"; };
+		D9ED55B11F26662E003D27CF /* VidyoClientConnector+Bridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "VidyoClientConnector+Bridge.h"; path = "CustomLayoutSample/VidyoClientConnector+Bridge.h"; sourceTree = "<group>"; };
+		D9ED55B21F26664E003D27CF /* CustomLayoutSample-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CustomLayoutSample-Bridging-Header.h"; path = "CustomLayoutSample/CustomLayoutSample-Bridging-Header.h"; sourceTree = "<group>"; };
+		D9ED55B31F26664E003D27CF /* VidyoClientConnector+Bridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "VidyoClientConnector+Bridge.m"; path = "CustomLayoutSample/VidyoClientConnector+Bridge.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D9ED55951F265FE4003D27CF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D9ED55AE1F26609D003D27CF /* VidyoClientIOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D9725AEE1F313AE50026883E /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				D9725AEF1F313AF60026883E /* callEnd.png */,
+				D9725AF01F313AF60026883E /* callStart.png */,
+				D9725AF11F313AF60026883E /* cameraOff.png */,
+				D9725AF21F313AF60026883E /* cameraOn.png */,
+				D9725AF31F313AF60026883E /* cameraOnWhite.png */,
+				D9725AF41F313AF60026883E /* cameraSwitch.png */,
+				D9725AF51F313AF60026883E /* microphoneOff.png */,
+				D9725AF61F313AF60026883E /* microphoneOn.png */,
+				D9725AF71F313AF60026883E /* microphoneOnWhite.png */,
+				D9725AF81F313AF60026883E /* speakerOff.png */,
+				D9725AF91F313AF60026883E /* speakerOn.png */,
+				D9725AFA1F313AF60026883E /* Vidyo.io-Vertical-Dark@2x.png */,
+			);
+			name = Icons;
+			sourceTree = "<group>";
+		};
+		D984FB081F340FBE00317B33 /* ObjectiveC */ = {
+			isa = PBXGroup;
+			children = (
+				D9ED55B21F26664E003D27CF /* CustomLayoutSample-Bridging-Header.h */,
+				D9ED55B11F26662E003D27CF /* VidyoClientConnector+Bridge.h */,
+				D9ED55B31F26664E003D27CF /* VidyoClientConnector+Bridge.m */,
+			);
+			name = ObjectiveC;
+			sourceTree = "<group>";
+		};
+		D9ED558F1F265FE4003D27CF = {
+			isa = PBXGroup;
+			children = (
+				D984FB091F3A144100317B33 /* README.md */,
+				D9ED559A1F265FE4003D27CF /* CustomLayoutSample */,
+				D984FB081F340FBE00317B33 /* ObjectiveC */,
+				D9725AEE1F313AE50026883E /* Icons */,
+				D9ED55AD1F26609D003D27CF /* VidyoClientIOS.framework */,
+				D9ED55991F265FE4003D27CF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D9ED55991F265FE4003D27CF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D9ED55981F265FE4003D27CF /* CustomLayoutSample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D9ED559A1F265FE4003D27CF /* CustomLayoutSample */ = {
+			isa = PBXGroup;
+			children = (
+				D9725AED1F312B930026883E /* CustomLayoutSample.entitlements */,
+				D9ED559B1F265FE4003D27CF /* AppDelegate.swift */,
+				D984FB051F33F6F700317B33 /* RemoteViewsHelper.swift */,
+				D9725B071F313ED20026883E /* HomeViewController.swift */,
+				D9ED559D1F265FE4003D27CF /* CompositedViewController.swift */,
+				D9725B091F313F030026883E /* CustomViewController.swift */,
+				D9ED559F1F265FE4003D27CF /* Main.storyboard */,
+				D9ED55A21F265FE4003D27CF /* Assets.xcassets */,
+				D9ED55A41F265FE4003D27CF /* LaunchScreen.storyboard */,
+				D9ED55A71F265FE4003D27CF /* Info.plist */,
+			);
+			path = CustomLayoutSample;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D9ED55971F265FE4003D27CF /* CustomLayoutSample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D9ED55AA1F265FE4003D27CF /* Build configuration list for PBXNativeTarget "CustomLayoutSample" */;
+			buildPhases = (
+				D9ED55941F265FE4003D27CF /* Sources */,
+				D9ED55951F265FE4003D27CF /* Frameworks */,
+				D9ED55961F265FE4003D27CF /* Resources */,
+				D9ED55B01F26609D003D27CF /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CustomLayoutSample;
+			productName = CustomLayoutSample;
+			productReference = D9ED55981F265FE4003D27CF /* CustomLayoutSample.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D9ED55901F265FE4003D27CF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "Sachin Hegde";
+				TargetAttributes = {
+					D9ED55971F265FE4003D27CF = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 6888NB32SR;
+						LastSwiftMigration = 0830;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = D9ED55931F265FE4003D27CF /* Build configuration list for PBXProject "CustomLayoutSample" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D9ED558F1F265FE4003D27CF;
+			productRefGroup = D9ED55991F265FE4003D27CF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D9ED55971F265FE4003D27CF /* CustomLayoutSample */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D9ED55961F265FE4003D27CF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D9725AFE1F313AF60026883E /* cameraOn.png in Resources */,
+				D9ED55A61F265FE4003D27CF /* LaunchScreen.storyboard in Resources */,
+				D9725AFB1F313AF60026883E /* callEnd.png in Resources */,
+				D9725B041F313AF60026883E /* speakerOff.png in Resources */,
+				D9725B051F313AF60026883E /* speakerOn.png in Resources */,
+				D9725AFF1F313AF60026883E /* cameraOnWhite.png in Resources */,
+				D9725B001F313AF60026883E /* cameraSwitch.png in Resources */,
+				D9725B021F313AF60026883E /* microphoneOn.png in Resources */,
+				D9725B061F313AF60026883E /* Vidyo.io-Vertical-Dark@2x.png in Resources */,
+				D9725B031F313AF60026883E /* microphoneOnWhite.png in Resources */,
+				D9725AFD1F313AF60026883E /* cameraOff.png in Resources */,
+				D9ED55A31F265FE4003D27CF /* Assets.xcassets in Resources */,
+				D9ED55A11F265FE4003D27CF /* Main.storyboard in Resources */,
+				D9725AFC1F313AF60026883E /* callStart.png in Resources */,
+				D9725B011F313AF60026883E /* microphoneOff.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D9ED55941F265FE4003D27CF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D984FB061F33F6F700317B33 /* RemoteViewsHelper.swift in Sources */,
+				D9ED559E1F265FE4003D27CF /* CompositedViewController.swift in Sources */,
+				D9ED55B41F26664E003D27CF /* VidyoClientConnector+Bridge.m in Sources */,
+				D984FB0A1F3A144100317B33 /* README.md in Sources */,
+				D9725B0A1F313F030026883E /* CustomViewController.swift in Sources */,
+				D9ED559C1F265FE4003D27CF /* AppDelegate.swift in Sources */,
+				D9725B081F313ED20026883E /* HomeViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		D9ED559F1F265FE4003D27CF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D9ED55A01F265FE4003D27CF /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D9ED55A41F265FE4003D27CF /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D9ED55A51F265FE4003D27CF /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D9ED55A81F265FE4003D27CF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D9ED55A91F265FE4003D27CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D9ED55AB1F265FE4003D27CF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "$(PROJECT_DIR)/CustomLayoutSample/CustomLayoutSample.entitlements";
+				DEVELOPMENT_TEAM = 6888NB32SR;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/CustomLayoutSample",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/CustomLayoutSample",
+				);
+				INFOPLIST_FILE = CustomLayoutSample/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = io.vidyo.CustomLayoutSample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "CustomLayoutSample/CustomLayoutSample-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		D9ED55AC1F265FE4003D27CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "$(PROJECT_DIR)/CustomLayoutSample/CustomLayoutSample.entitlements";
+				DEVELOPMENT_TEAM = 6888NB32SR;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/CustomLayoutSample",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/CustomLayoutSample",
+				);
+				INFOPLIST_FILE = CustomLayoutSample/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = io.vidyo.CustomLayoutSample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "CustomLayoutSample/CustomLayoutSample-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D9ED55931F265FE4003D27CF /* Build configuration list for PBXProject "CustomLayoutSample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D9ED55A81F265FE4003D27CF /* Debug */,
+				D9ED55A91F265FE4003D27CF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D9ED55AA1F265FE4003D27CF /* Build configuration list for PBXNativeTarget "CustomLayoutSample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D9ED55AB1F265FE4003D27CF /* Debug */,
+				D9ED55AC1F265FE4003D27CF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D9ED55901F265FE4003D27CF /* Project object */;
+}
