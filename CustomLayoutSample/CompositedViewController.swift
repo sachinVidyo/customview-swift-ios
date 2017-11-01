@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CompositedViewController : UIViewController, IConnect {
+class CompositedViewController : UIViewController, VCIConnect {
 
     // MARK: - Properties and variables
 
@@ -16,12 +16,12 @@ class CompositedViewController : UIViewController, IConnect {
     @IBOutlet weak var micButton: UIButton!
     @IBOutlet weak var callButton: UIButton!
     @IBOutlet weak var cameraButton: UIButton!
-    private var connector:Connector?
+    private var connector:VCConnector?
     var resourceID      = ""
     var displayName     = ""
     var micMuted        = false
     var cameraMuted     = false
-    let VIDYO_TOKEN     = "cHJvdmlzaW9uAFNhY2hpbkBlOGQ5YTMudmlkeW8uaW8ANjM2Njk5Njg2NzEAADNkNDM1MGM1ZDg1Y2Q0YjRkZWUzNjQzYzJlYzJmZDJiOTdiNjgxNWE2Yjc4Y2RjZmMyNzdkNWY1ZWRmNDdiYWJkNTk4NDQ0NDUxOTBlMzgyMjY2NmRmNGRhMTc1MWFmMA==" // Get a valid token. It is recommended that you create short lived tokens on your applications server and then pass it down here. For details on how to get a token check out - https://developer.vidyo.io/documentation/4-1-15-7/getting-started#Tokens 
+    let VIDYO_TOKEN     = "" // Get a valid token. It is recommended that you create short lived tokens on your applications server and then pass it down here. For details on how to get a token check out - https://developer.vidyo.io/documentation/4-1-15-7/getting-started#Tokens
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder :aDecoder)
@@ -31,8 +31,8 @@ class CompositedViewController : UIViewController, IConnect {
         super.viewDidLoad()
         
         NotificationCenter.default.addObserver(self, selector: #selector(CompositedViewController.refreshUI), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
-        connector = Connector(UnsafeMutableRawPointer(&vidyoView),
-                              viewStyle: .CONNECTORVIEWSTYLE_Default,
+        connector = VCConnector(UnsafeMutableRawPointer(&vidyoView),
+                              viewStyle: .default,
                               remoteParticipants: 4,
                               logFileFilter: UnsafePointer("info@VidyoClient info@VidyoConnector warning"),
                               logFileName: UnsafePointer(""),
@@ -42,11 +42,11 @@ class CompositedViewController : UIViewController, IConnect {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.refreshUI()
-        connector?.connect(UnsafePointer("prod.vidyo.io"),
-                                  token: UnsafePointer(VIDYO_TOKEN),
-                                  displayName: UnsafePointer(displayName),
-                                  resourceId: UnsafePointer(resourceID),
-                                  connect: self)
+        connector?.connect("prod.vidyo.io",
+                          token: VIDYO_TOKEN,
+                          displayName: "Sachin",
+                          resourceId: "demoRoom",
+                          connect: self)
     }
 
     override func didReceiveMemoryWarning() {
@@ -57,10 +57,10 @@ class CompositedViewController : UIViewController, IConnect {
     func refreshUI() {
         DispatchQueue.main.async {
             self.connector?.showView(at: UnsafeMutableRawPointer(&self.vidyoView),
-                                     x: 0,
-                                     y: 0,
-                                     width: UInt32(self.vidyoView.frame.size.width),
-                                     height: UInt32(self.vidyoView.frame.size.height))
+                                    x: 0,
+                                    y: 0,
+                                    width: UInt32(self.vidyoView.frame.size.width),
+                                    height: UInt32(self.vidyoView.frame.size.height))
         }
     }
     
@@ -70,17 +70,17 @@ class CompositedViewController : UIViewController, IConnect {
         print("Connection Successful")
     }
     
-    func onFailure(_ reason: ConnectorFailReason) {
+    func onFailure(_ reason: VCConnectorFailReason) {
         print("Connection failed \(reason)")
     }
     
-    func onDisconnected(_ reason: ConnectorDisconnectReason) {
+    func onDisconnected(_ reason: VCConnectorDisconnectReason) {
         print("Call Disconnected")
         DispatchQueue.main.async {
             self.dismiss(animated: true, completion: nil)
         }
     }
-    
+   
     // MARK: - Actions
     
     @IBAction func cameraClicked(_ sender: Any) {

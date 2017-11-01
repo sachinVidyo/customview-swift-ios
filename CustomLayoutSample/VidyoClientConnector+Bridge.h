@@ -14,12 +14,4 @@
 #import <VidyoClientIOS.framework/Headers/Lmi/VidyoClient/VidyoConnector_Objc.h>
 
 
-
-@interface VidyoClientConnector (VidyoIOBridge)
-
-+(void) initializeVidyoClient;
-
-@end
-
-
 #endif /* VidyoIOBridge_h */

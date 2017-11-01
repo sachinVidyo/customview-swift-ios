@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CustomViewController: UIViewController , IConnect , IRegisterLocalCameraEventListener , IRegisterRemoteCameraEventListener, IRegisterRemoteMicrophoneEventListener, IRegisterLocalMicrophoneEventListener, IRegisterLocalSpeakerEventListener, IRegisterParticipantEventListener {
+class CustomViewController: UIViewController , VCIConnect , VCIRegisterLocalCameraEventListener , VCIRegisterRemoteCameraEventListener, VCIRegisterRemoteMicrophoneEventListener, VCIRegisterLocalMicrophoneEventListener, VCIRegisterLocalSpeakerEventListener, VCIRegisterParticipantEventListener {
 
     // MARK: - Properties and variables
     
@@ -17,7 +17,7 @@ class CustomViewController: UIViewController , IConnect , IRegisterLocalCameraEv
     @IBOutlet weak var micButton: UIButton!
     @IBOutlet weak var callButton: UIButton!
     @IBOutlet weak var cameraButton: UIButton!
-    private var connector:Connector?
+    private var connector:VCConnector?
     private var remoteViewsMap:[String:UIView] = [:]
     private var numberOfRemoteViews = 0
     var resourceID          = ""
@@ -26,7 +26,7 @@ class CustomViewController: UIViewController , IConnect , IRegisterLocalCameraEv
     var cameraMuted         = false
     var expandedSelfView    = false
     
-    let VIDYO_TOKEN         = "cHJvdmlzaW9uAFNhY2hpbkBlOGQ5YTMudmlkeW8uaW8ANjM2Njk5Njg2NzEAADNkNDM1MGM1ZDg1Y2Q0YjRkZWUzNjQzYzJlYzJmZDJiOTdiNjgxNWE2Yjc4Y2RjZmMyNzdkNWY1ZWRmNDdiYWJkNTk4NDQ0NDUxOTBlMzgyMjY2NmRmNGRhMTc1MWFmMA==" // Get a valid token. It is recommended that you create short lived tokens on your applications server and then pass it down here. For details on how to get a token check out - https://developer.vidyo.io/documentation/4-1-15-7/getting-started#Tokens 
+    let VIDYO_TOKEN         = "" // Get a valid token. It is recommended that you create short lived tokens on your applications server and then pass it down here. For details on how to get a token check out - https://developer.vidyo.io/documentation/4-1-15-7/getting-started#Tokens
     
     // MARK: - Viewcontroller override methods
     
@@ -47,12 +47,12 @@ class CustomViewController: UIViewController , IConnect , IRegisterLocalCameraEv
         selfView.addGestureRecognizer(tap)
         
         // Create VidyoIO connector object
-        connector = Connector(nil,                                      // For custom handling of views, set this to nil
-                              viewStyle: .CONNECTORVIEWSTYLE_Default,   // Passing default,
-                              remoteParticipants: 4,                    // In this sample I am only showing maximum of 4 participants at a time
-                              logFileFilter: UnsafePointer("info@VidyoClient info@VidyoConnector warning"),
-                              logFileName: UnsafePointer(""),
-                              userData: 0)
+        connector = VCConnector(nil,                                    // For custom handling of views, set this to nil
+                                viewStyle: .default,                    // Passing default,
+                                remoteParticipants: 1,                    // In this sample I am only showing maximum of 4 participants at a time
+                                logFileFilter: UnsafePointer("info@VidyoClient info@VidyoConnector warning"),
+                                logFileName: UnsafePointer(""),
+                                userData: 0)
         
         if connector != nil {
             // When For custom view we need to register to all the device events
@@ -75,10 +75,10 @@ class CustomViewController: UIViewController , IConnect , IRegisterLocalCameraEv
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.refreshUI()
-        connector?.connect(UnsafePointer("prod.vidyo.io"),
-                           token: UnsafePointer("cHJvdmlzaW9uAFNhY2hpbkBlOGQ5YTMudmlkeW8uaW8ANjM2Njk5Njg2NzEAADNkNDM1MGM1ZDg1Y2Q0YjRkZWUzNjQzYzJlYzJmZDJiOTdiNjgxNWE2Yjc4Y2RjZmMyNzdkNWY1ZWRmNDdiYWJkNTk4NDQ0NDUxOTBlMzgyMjY2NmRmNGRhMTc1MWFmMA=="),
-                           displayName: UnsafePointer(displayName),
-                           resourceId: UnsafePointer(resourceID),
+        connector?.connect("prod.vidyo.io",
+                           token: VIDYO_TOKEN,
+                           displayName: "Sachin",
+                           resourceId: "demoRoom",
                            connect: self)
     }
     
@@ -152,7 +152,6 @@ class CustomViewController: UIViewController , IConnect , IRegisterLocalCameraEv
                                          y: 0,
                                          width: UInt32(refFrame.size.width),
                                          height: UInt32(refFrame.size.height))
-                index += 1
                 
                 // updating label location
                 for subview in remoteView.subviews
@@ -165,6 +164,11 @@ class CustomViewController: UIViewController , IConnect , IRegisterLocalCameraEv
                                             height: 20)
                     }
                 }
+                index += 1
+                if index >= 4 {
+                    // Showing max 4 remote participants
+                    break
+                }
             }
         }
     }
@@ -175,11 +179,11 @@ class CustomViewController: UIViewController , IConnect , IRegisterLocalCameraEv
         print("Connection Successful")
     }
     
-    func onFailure(_ reason: ConnectorFailReason) {
+    func onFailure(_ reason: VCConnectorFailReason) {
         print("Connection failed \(reason)")
     }
     
-    func onDisconnected(_ reason: ConnectorDisconnectReason) {
+    func onDisconnected(_ reason: VCConnectorDisconnectReason) {
         print("Call Disconnected")
         DispatchQueue.main.async {
             self.dismiss(animated: true, completion: nil)
@@ -188,91 +192,79 @@ class CustomViewController: UIViewController , IConnect , IRegisterLocalCameraEv
     
     // MARK: - IRegisterParticipantEventListener delegate methods
     
-    func onParticipantLeft(_ participant: Participant!) {
+    func onParticipantLeft(_ participant: VCParticipant!) {
         
     }
     
-    func onParticipantJoined(_ participant: Participant!) {
+    func onParticipantJoined(_ participant: VCParticipant!) {
         
     }
     
-    func onLoudestParticipantChanged(_ participant: Participant!, audioOnly: Bool) {
+    func onLoudestParticipantChanged(_ participant: VCParticipant!, audioOnly: Bool) {
         
     }
     
     func onDynamicParticipantChanged(_ participants: NSMutableArray!, remoteCameras: NSMutableArray!) {
-        print("onDynamicParticipantChanged Participants - \(participants.count) cameras - \(remoteCameras.count)")
-        
-        for item in participants {
-            let remoteParticipant = item as! Participant
-            print("Participant Name - \(remoteParticipant.getName())")
-        }
-        
-        
-        for item in remoteCameras {
-            let remoteCamera = item as! RemoteCamera
-            print("Participant Name - \(remoteCamera.getName())")
-        }
-        
+                
     }
     
     // MARK: - IRegisterLocalSpeakerEventListener delegate methods
     
-    func onLocalSpeakerAdded(_ localSpeaker: LocalSpeaker!) {
+    func onLocalSpeakerAdded(_ localSpeaker: VCLocalSpeaker!) {
         
     }
     
-    func onLocalSpeakerRemoved(_ localSpeaker: LocalSpeaker!) {
+    func onLocalSpeakerRemoved(_ localSpeaker: VCLocalSpeaker!) {
         
     }
     
-    func onLocalSpeakerSelected(_ localSpeaker: LocalSpeaker!) {
+    func onLocalSpeakerSelected(_ localSpeaker: VCLocalSpeaker!) {
         
     }
     
-    func onLocalSpeakerStateUpdated(_ localSpeaker: LocalSpeaker!, state: DeviceState) {
+    func onLocalSpeakerStateUpdated(_ localSpeaker: VCLocalSpeaker!, state: VCDeviceState) {
         
     }
     
     // MARK: - IRegisterLocalMicrophoneEventListener delegate methods
     
-    func onLocalMicrophoneAdded(_ localMicrophone: LocalMicrophone!) {
+    func onLocalMicrophoneAdded(_ localMicrophone: VCLocalMicrophone!) {
         
     }
     
-    func onLocalMicrophoneRemoved(_ localMicrophone: LocalMicrophone!) {
+    func onLocalMicrophoneRemoved(_ localMicrophone: VCLocalMicrophone!) {
         
     }
     
-    func onLocalMicrophoneSelected(_ localMicrophone: LocalMicrophone!) {
+    func onLocalMicrophoneSelected(_ localMicrophone: VCLocalMicrophone!) {
         
     }
     
-    func onLocalMicrophoneStateUpdated(_ localMicrophone: LocalMicrophone!, state: DeviceState) {
+    func onLocalMicrophoneStateUpdated(_ localMicrophone: VCLocalMicrophone!, state: VCDeviceState) {
         
     }
     
     // MARK: - IRegisterRemoteMicrophoneEventListener delegate methods
 
-    func onRemoteMicrophoneAdded(_ remoteMicrophone: RemoteMicrophone!, participant: Participant!) {
+    func onRemoteMicrophoneAdded(_ remoteMicrophone: VCRemoteMicrophone!, participant: VCParticipant!) {
         
     }
     
-    func onRemoteMicrophoneRemoved(_ remoteMicrophone: RemoteMicrophone!, participant: Participant!) {
+    func onRemoteMicrophoneRemoved(_ remoteMicrophone: VCRemoteMicrophone!, participant: VCParticipant!) {
         
     }
     
-    func onRemoteMicrophoneStateUpdated(_ remoteMicrophone: RemoteMicrophone!, participant: Participant!, state: DeviceState) {
+    func onRemoteMicrophoneStateUpdated(_ remoteMicrophone: VCRemoteMicrophone!, participant: VCParticipant!, state: VCDeviceState) {
         
     }
     
     // MARK: - IRegisterLocalCameraEventListener delegate methods
     
-    func onLocalCameraRemoved(_ localCamera: LocalCamera!) {
+    func onLocalCameraRemoved(_ localCamera: VCLocalCamera!) {
         self.selfView.isHidden = true
     }
     
-    func onLocalCameraAdded(_ localCamera: LocalCamera!) {
+    func onLocalCameraAdded(_ localCamera: VCLocalCamera!) {
         if ((localCamera) != nil) {
             self.selfView.isHidden = false
             DispatchQueue.main.async {
@@ -291,17 +283,18 @@ class CustomViewController: UIViewController , IConnect , IRegisterLocalCameraEv
         }
     }
     
-    func onLocalCameraSelected(_ localCamera: LocalCamera!) {
+    func onLocalCameraSelected(_ localCamera: VCLocalCamera!) {
         
     }
     
-    func onLocalCameraStateUpdated(_ localCamera: LocalCamera!, state: DeviceState) {
+    func onLocalCameraStateUpdated(_ localCamera: VCLocalCamera!, state: VCDeviceState) {
         
     }
     
     // MARK: - IRegisterRemoteCameraEventListener delegate methods
     
-    func onRemoteCameraAdded(_ remoteCamera: RemoteCamera!, participant: Participant!) {
+    func onRemoteCameraAdded(_ remoteCamera: VCRemoteCamera!, participant: VCParticipant!) {
+        
         numberOfRemoteViews += 1
         DispatchQueue.main.async {
             var newRemoteView = UIView()
@@ -330,7 +323,7 @@ class CustomViewController: UIViewController , IConnect , IRegisterLocalCameraEv
         }
     }
     
-    func onRemoteCameraRemoved(_ remoteCamera: RemoteCamera!, participant: Participant!) {
+    func onRemoteCameraRemoved(_ remoteCamera: VCRemoteCamera!, participant: VCParticipant!) {
         numberOfRemoteViews -= 1
         DispatchQueue.main.async {
             let remoteView = self.remoteViewsMap.removeValue(forKey: participant.getId())
@@ -343,7 +336,7 @@ class CustomViewController: UIViewController , IConnect , IRegisterLocalCameraEv
         }
     }
     
-    func onRemoteCameraStateUpdated(_ remoteCamera: RemoteCamera!, participant: Participant!, state: DeviceState) {
+    func onRemoteCameraStateUpdated(_ remoteCamera: VCRemoteCamera!, participant: VCParticipant!, state: VCDeviceState) {
         
     }
 

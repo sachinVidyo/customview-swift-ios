@@ -9,12 +9,3 @@
 #import <Foundation/Foundation.h>
 #import "VidyoClientConnector+Bridge.h"
 
-
-@implementation VidyoClientConnector (VidyoIOBridge)
-
-
-+(void) initializeVidyoClient {
-    [VidyoClientConnector Initialize];
-}
-
-@end
